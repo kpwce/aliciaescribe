@@ -20,7 +20,7 @@
   },
   "scripts": {
     "predeploy": "npm run build",
-    "deploy": "gh-pages -b master -d build",
+    "deploy": "gh-pages -d build",
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
@@ -46,6 +46,7 @@
   },
   "devDependencies": {
     "gh-pages": "^4.0.0",
+    "github-pages": "^3.0.2",
     "main": "^1000.0.1"
   }
 }
