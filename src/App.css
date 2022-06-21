@@ -1,24 +1,20 @@
 body {
   font-family: 'Helveltica', sans-serif;
-}
-
-.App {
-  text-align: center;
-}
-
-.App-header {
   background-color: black;
+  color: white;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(20px + 2vmin);
-  color: white;
+  margin: 5px;
+  text-align: center;
 }
 
+
 footer {
-  margin-top: 5px;
+  background-color: rgb(0, 52, 66);
 }
 
 button {
@@ -27,34 +23,39 @@ button {
   font-size: larger;
   cursor: pointer;
   background-color: transparent;
-  color: white;
-}
-
-button:hover {
-  color: black;
 }
 
 #cs {
-  border-color: red;
+  border-color: rgb(76, 0, 255);
+  color: white;
 }
 
 #cs:hover {
-  background-color: red;
+  background-color: rgb(76, 0, 255);
 }
 
 #math {
-  border-color: yellow;
+  border-color: rgb(0, 189, 154);
+  color: white;
 }
 
 #math:hover {
-  background-color: yellow;
+  background-color: rgb(0, 189, 154);
 }
 
 #spanish {
-  border-color: blue;
+  border-color: rgb(221, 0, 255);
+  color: white;
 }
 
 #spanish:hover {
-  background-color: blue;
+  background-color: rgb(221, 0, 255);
+}
+
+#homeIcon {
+  border: none;
+  color: white;
+  font-size: larger;
+  left: 5px;
 }
 
