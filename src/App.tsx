@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
-import {FaHome} from 'react-icons/fa';
+import {FaHome, FaLinkedin, FaGithub} from 'react-icons/fa';
 
 interface AppState {
   visible : string;
@@ -31,10 +31,6 @@ export class App extends Component<{}, AppState> {
 
     return (
       <div className="App">
-        <header>
-        <button id='homeIcon' onClick= {() => this.setVisible("home")}><FaHome /></button>
-        </header>
-      
       {content}
       {this.getFooter()}
       </div>
@@ -48,9 +44,9 @@ export class App extends Component<{}, AppState> {
 
       <h2>My name is Alysa.</h2>
 
-      <h3>I also go by Alicia.</h3>
+      <h3>In Spanish, I also go by Alicia.</h3>
 
-      <h4>And this is a personal website that I made using a bit of React and Typescript.</h4>
+      <h4>This is a simple personal website that I made using a bit of React and TypeScript.</h4>
 
       <h5>I'm a sophomore at the University of Washington studying: </h5>
 
@@ -67,6 +63,10 @@ export class App extends Component<{}, AppState> {
   getFooter() {
     return (
     <footer>
+      Interested in contacting me?
+      <br/>
+      <a text-color="white" href="www.linkedin.com/in/alysam"><FaLinkedin/></a>
+      <a text-color="white" href="https://github.com/kpwce"><FaGithub/></a>
       <div className="Copyright">
         <p>© {new Date().getFullYear()} aliciaescribe ~ Thank you for visiting!</p>
       </div>
@@ -77,13 +77,16 @@ export class App extends Component<{}, AppState> {
   getCS() {
     return (
       <div className="App-cs">
-        <h1>I study computer science to bring all the projects I dream to create to reality.</h1>
+        <h1>I learn computer science to bring all the projects I dream to create to reality.</h1>
 
-        <h2>Have experience in Java, LaTeX, and Git (Version Control).</h2>
+        <h2>I'm experienced in Java, LaTeX, and Git (Version Control).</h2>
 
-        <h2>Am familiar with JavaScript, HTML, CSS, Python, R, and C.</h2>
+        <h2>I'm familiar with JavaScript, HTML, CSS, Python, R, and C.</h2>
 
-        <h2>Want to learn Excel, SQL, and Python (Machine learning applications).</h2>
+        <h2>I want to learn Excel, SQL, and Python (machine learning applications).</h2>
+
+        <br/>
+        <button id='homeIcon' onClick= {() => this.setVisible("home")}><FaHome /></button>
       </div>
     );
   }
@@ -91,13 +94,15 @@ export class App extends Component<{}, AppState> {
   getMath() {
     return (
       <div className="App-math">
-      <h1>I study math to not only comprehend but also create the world I want to see.</h1>
+      <h1>I learn math to not only comprehend but also create the world I want to see.</h1>
 
       I've taken courses in calculus, linear algebra, differential equations, and statistics. I have a basic understanding of proof-writing.
 
-      <br/>
+      <br/><br/>
       I'm passionate about teaching mathematics and advocate for the use of technology to further understanding of mathematics.
       <br/>
+
+      <button id='homeIcon' onClick= {() => this.setVisible("home")}><FaHome /></button>
     </div>
     );
   }
@@ -105,7 +110,9 @@ export class App extends Component<{}, AppState> {
   getSpanish() {
     return (
       <div className="App-spanish">
-      <h1>Actually, I don't study Spanish. I started taking classes in middle school as an elective and haven't stopped taking classes since.</h1>
+      <h1>Actually, I don't study Spanish.</h1>
+
+      <h3>I started taking classes in middle school as an elective and haven't stopped taking classes ever since.</h3>
       
       <h2>What I've Read:</h2>
 
@@ -114,6 +121,9 @@ export class App extends Component<{}, AppState> {
       <h2>What I've Written:</h2>
 
       <a href="https://revistaliteral.com/2020/04/13/un-dia-en-el-anden/">Un día en el andén</a>
+
+      <br/>
+      <button id='homeIcon' onClick= {() => this.setVisible("home")}><FaHome /></button>
       </div>
     );
   }
@@ -122,6 +132,7 @@ export class App extends Component<{}, AppState> {
     console.log("Set id");
     this.setState({visible : topic});
   }
+
 
 }
 
