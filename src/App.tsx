@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
+import {FaHome} from 'react-icons/fa';
 
 interface AppState {
   visible : string;
@@ -30,6 +31,9 @@ export class App extends Component<{}, AppState> {
 
     return (
       <div className="App">
+        <header>
+        <button id='homeIcon' onClick= {() => this.setVisible("home")}><FaHome /></button>
+        </header>
       
       {content}
       {this.getFooter()}
@@ -39,7 +43,7 @@ export class App extends Component<{}, AppState> {
 
   getHeader() {
     return (
-      <header className="App-header">
+      <div className="App-header">
       <h1>Welcome!</h1>
 
       <h2>My name is Alysa.</h2>
@@ -56,7 +60,7 @@ export class App extends Component<{}, AppState> {
 
       <button id='spanish' onClick={() => this.setVisible("spanish")}>Spanish</button>
       <br/>
-      </header>
+      </div>
     );
   }
 
@@ -72,19 +76,45 @@ export class App extends Component<{}, AppState> {
 
   getCS() {
     return (
-      <h1>I like computer science.</h1>
+      <div className="App-cs">
+        <h1>I study computer science to bring all the projects I dream to create to reality.</h1>
+
+        <h2>Have experience in Java, LaTeX, and Git (Version Control).</h2>
+
+        <h2>Am familiar with JavaScript, HTML, CSS, Python, R, and C.</h2>
+
+        <h2>Want to learn Excel, SQL, and Python (Machine learning applications).</h2>
+      </div>
     );
   }
 
   getMath() {
     return (
-      <h1>I like math.</h1>
+      <div className="App-math">
+      <h1>I study math to not only comprehend but also create the world I want to see.</h1>
+
+      I've taken courses in calculus, linear algebra, differential equations, and statistics. I have a basic understanding of proof-writing.
+
+      <br/>
+      I'm passionate about teaching mathematics and advocate for the use of technology to further understanding of mathematics.
+      <br/>
+    </div>
     );
   }
 
   getSpanish() {
     return (
-      <h1>I like Spanish.</h1>
+      <div className="App-spanish">
+      <h1>Actually, I don't study Spanish. I started taking classes in middle school as an elective and haven't stopped taking classes since.</h1>
+      
+      <h2>What I've Read:</h2>
+
+      <a href="https://books.google.com/books?uid=110208776478307431189&as_coll=4&hl=es&source=gbs_lp_bookshelf_list">See my bookshelf</a>
+
+      <h2>What I've Written:</h2>
+
+      <a href="https://revistaliteral.com/2020/04/13/un-dia-en-el-anden/">Un día en el andén</a>
+      </div>
     );
   }
 
