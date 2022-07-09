@@ -46,8 +46,6 @@ export class App extends Component<{}, AppState> {
 
       <h3>In Spanish, I also go by Alicia.</h3>
 
-      <h4>This is a simple personal website that I made using a bit of React and TypeScript.</h4>
-
       <h5>I'm a sophomore at the University of Washington studying: </h5>
 
       <button id='cs' onClick={() => this.setVisible("cs")}>Computer Science</button>
@@ -65,10 +63,10 @@ export class App extends Component<{}, AppState> {
     <footer>
       Interested in contacting me?
       <br/>
-      <a text-color="white" href="www.linkedin.com/in/alysam"><FaLinkedin/></a>
-      <a text-color="white" href="https://github.com/kpwce"><FaGithub/></a>
+      <a href="https://www.linkedin.com/in/alysam"><FaLinkedin/></a>
+      <a href="https://github.com/kpwce"><FaGithub/></a>
       <div className="Copyright">
-        <p>© {new Date().getFullYear()} aliciaescribe ~ Thank you for visiting!</p>
+        <p>© {new Date().getFullYear()} aliciaescribe </p>
       </div>
     </footer>
     );
@@ -110,7 +108,7 @@ export class App extends Component<{}, AppState> {
   getSpanish() {
     return (
       <div className="App-spanish">
-      <h1>Actually, I don't study Spanish.</h1>
+      <h1>Actually, I don't "study" Spanish.</h1>
 
       <h3>I started taking classes in middle school as an elective and haven't stopped taking classes ever since.</h3>
       

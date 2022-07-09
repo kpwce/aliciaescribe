@@ -1,22 +1,32 @@
+html, body {
+  height: 100%;
+}
 body {
   font-family: 'Helveltica', sans-serif;
   background-color: black;
   color: white;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
   font-size: calc(20px + 2vmin);
   margin: 5px;
   text-align: center;
   margin: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+a {
+  color : white;
+}
+
+.content {
+  flex: 1 0 auto;
 }
 
 
 footer {
-  padding-top: 20px;
   background-color: black;
+  flex-shrink: 0;
 }
 
 button {
