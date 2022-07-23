@@ -1,68 +1,138 @@
 import React, {Component} from 'react';
+import './TextArea'
+import texts from './description';
 import './App.css';
-import {FaHome, FaLinkedin, FaGithub} from 'react-icons/fa';
+import {FaLinkedin, FaGithub, FaInstagram} from 'react-icons/fa';
+import profile from './profile_pic.jpg';
+import TextArea from './TextArea';
 
 interface AppState {
-  visible : string;
+  lang: boolean; // track language (Spanish if true, otherwise English)
 }
 
 export class App extends Component<{}, AppState> {
 
   constructor(props : {}) {
     super(props);
-    this.state = {visible : "home"};
-    this.setVisible = this.setVisible.bind(this);
+    this.state = {lang: true};
+    
+    this.setLang = this.setLang.bind(this);
   }
 
 
+  // structure all the components
   render() {
-
-    let content;
-    if (this.state.visible === "home") {
-      content = this.getHeader();
-    } else if (this.state.visible === "cs") {
-      content = this.getCS();
-    } else if (this.state.visible === "math") {
-      content = this.getMath();
-    } else {
-      content = this.getSpanish();
-    }
-
-
     return (
       <div className="App">
-      {content}
+        <div className="header">
+          <button onClick={() => this.setLang(false)}>EN</button>
+          <button onClick={() => this.setLang(true)}>ES</button>
+        </div>
+      {this.getIntro()}
+      {this.getAbout()}
+      {this.getWriting()}
+      {this.getProjects()}
       {this.getFooter()}
       </div>
     );
   }
 
-  getHeader() {
+  setLang(spanish: boolean) { 
+    // Changing languages
+    this.setState({lang : spanish});
+  } 
+
+  // intro with portrait
+  getIntro() {
     return (
-      <div className="App-header">
-      <h1>Welcome!</h1>
+      <div className="intro">
+        {TextArea("Alicia", "Alysa", this.state.lang)}
+        <img src={profile} alt="Profile"/>
+      </div>
 
-      <h2>My name is Alysa.</h2>
+    );
 
-      <h3>In Spanish, I also go by Alicia.</h3>
+  }
 
-      <h5>I'm a sophomore at the University of Washington studying: </h5>
+  // quick self description
+  getAbout() {
+    return (
+      <div className="about">
+        {TextArea("Sobre mí", "About me", this.state.lang)}
+        <p>{texts[this.state.lang === true ? 0 : 1]}</p>
+      </div>
 
-      <button id='cs' onClick={() => this.setVisible("cs")}>Computer Science</button>
+    );
+  }
 
-      <button id='math' onClick={() => this.setVisible("math")}>Mathematics</button>
+  // some selected works
+  getWriting() {
+    return (
+      <div className="writing">
+        {TextArea("Literatura", "Writing", this.state.lang)}
 
-      <button id='spanish' onClick={() => this.setVisible("spanish")}>Spanish</button>
-      <br/>
+        <div className="work">
+          <h4>"Los perros alegóricos en la Revolución mexicana"</h4>
+          <p>{texts[(this.state.lang === true ? 0 : 1) + 2]}</p>
+        </div>
+
+        <div className="work">
+          <h4>"Dibujos de tiza"</h4>
+          <p>{texts[(this.state.lang === true ? 0 : 1) + 4]}</p>
+        </div>
+
+        <div className="work">
+          <h4>"Carta de presentación escrita por un pícaro"</h4>
+          <p>{texts[(this.state.lang === true ? 0 : 1) + 6]}</p>
+        </div>
+
+        <div className="work">
+          <h4>"Un día en el andén"</h4>
+          <p>{texts[(this.state.lang === true ? 0 : 1) + 8]}</p>
+        </div>
+
+        <div className="work">
+          <h4>"Las naranjas sanguinas"</h4>
+          <p>{texts[(this.state.lang === true ? 0 : 1) + 10]}</p>
+        </div>
       </div>
     );
   }
 
+  // some selected projects
+  getProjects() {
+    return (
+      <div className="projects">
+      {TextArea("Proyectos", "Projects", this.state.lang)}
+      <div className="work">
+          <h4>Lingüística computacional con los textos góticos - Java</h4>
+          <p>{texts[(this.state.lang === true ? 0 : 1) + 12]}</p>
+        </div>
+
+        <div className="work">
+          <h4>Clasificación de dialectos - Java</h4>
+          <p>{texts[(this.state.lang === true ? 0 : 1) + 14]}</p>
+        </div>
+
+        <div className="work">
+          <h4>Sitio personal - JavaScript</h4>
+          <p>{texts[(this.state.lang === true ? 0 : 1) + 16]}</p>
+        </div>
+
+        <div className="work">
+          <h4>Haikus aleatorios - JavaScript</h4>
+          <p>{texts[(this.state.lang === true ? 0 : 1) + 18]}</p>
+        </div>
+    </div>
+    );
+  }
+
+  // the awesome footer
   getFooter() {
     return (
     <footer>
-      Interested in contacting me?
-      <br/>
+      {TextArea("Información de contacto", "Contact information", this.state.lang)}
+      <a href="https://www.instagram.com/kpwce/"><FaInstagram/></a>
       <a href="https://www.linkedin.com/in/alysam"><FaLinkedin/></a>
       <a href="https://github.com/kpwce"><FaGithub/></a>
       <div className="Copyright">
@@ -72,66 +142,7 @@ export class App extends Component<{}, AppState> {
     );
   }
 
-  getCS() {
-    return (
-      <div className="App-cs">
-        <h1>I learn computer science to bring all the projects I dream to create to reality.</h1>
-
-        <h2>I'm experienced in Java, LaTeX, and Git (Version Control).</h2>
-
-        <h2>I'm familiar with JavaScript, HTML, CSS, Python, R, and C.</h2>
-
-        <h2>I want to learn Excel, SQL, and Python (machine learning applications).</h2>
-
-        <br/>
-        <button id='homeIcon' onClick= {() => this.setVisible("home")}><FaHome /></button>
-      </div>
-    );
-  }
-
-  getMath() {
-    return (
-      <div className="App-math">
-      <h1>I learn math to not only comprehend but also create the world I want to see.</h1>
-
-      I've taken courses in calculus, linear algebra, differential equations, and statistics. I have a basic understanding of proof-writing.
-
-      <br/><br/>
-      I'm passionate about teaching mathematics and advocate for the use of technology to further understanding of mathematics.
-      <br/>
-
-      <button id='homeIcon' onClick= {() => this.setVisible("home")}><FaHome /></button>
-    </div>
-    );
-  }
-
-  getSpanish() {
-    return (
-      <div className="App-spanish">
-      <h1>Actually, I don't "study" Spanish.</h1>
-
-      <h3>I started taking classes in middle school as an elective and haven't stopped taking classes ever since.</h3>
-      
-      <h2>What I've Read:</h2>
-
-      <a href="https://books.google.com/books?uid=110208776478307431189&as_coll=4&hl=es&source=gbs_lp_bookshelf_list">See my bookshelf</a>
-
-      <h2>What I've Written:</h2>
-
-      <a href="https://revistaliteral.com/2020/04/13/un-dia-en-el-anden/">Un día en el andén</a>
-
-      <br/>
-      <button id='homeIcon' onClick= {() => this.setVisible("home")}><FaHome /></button>
-      </div>
-    );
-  }
-
-  setVisible(topic : string) {
-    console.log("Set id");
-    this.setState({visible : topic});
-  }
-
 
 }
-
 export default App;
+
