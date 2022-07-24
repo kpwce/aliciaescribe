@@ -1,0 +1,75 @@
+html, body {
+  height: 100%;
+}
+body {
+  font-family: “Playfair Display”, “Didot”, "Times New Roman", Times, serif;
+  background-color: rgb(156, 156, 156);
+  color: rgb(68, 68, 68);
+  font-size: calc(20px + 2vmin);
+  text-align: center;
+}
+
+a {
+  color: rgb(156, 156, 156);
+}
+
+.intro {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-top: 20px;
+  padding: 50px;
+  background-color: rgb(86, 107, 141);
+}
+
+.text-area {
+  padding: 100px;
+}
+
+.header {
+  background-color: rgb(68, 85, 112);
+  position: fixed;
+  top: 0;
+  text-align: left;
+  width: 100%;
+}
+
+.work:hover {
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.5), 0 5px 50px 0 rgba(0, 0, 0, 0.5);
+  background-color: rgb(235, 235, 235);
+}
+
+img {
+    max-width:30%;
+    max-height:30%;
+    box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.5), 0 5px 50px 0 rgba(0, 0, 0, 0.5);
+    flex-basis: 40%;
+}
+
+footer {
+  background-color: rgb(68, 85, 112);
+  color:rgb(156, 156, 156);
+}
+
+button {
+  font-family: “Playfair Display”, “Didot”, "Times New Roman", Times, serif;
+  padding: 10px;
+  cursor: pointer;
+  background-color: transparent;
+  border-color: transparent;
+  font-weight: bold;
+  color: rgb(156, 156, 156);
+}
+
+a {
+  padding: 10px;
+}
+
+h2 {
+  color: rgb(68, 68, 68);
+}
+
+hr { 
+  margin-top:-35px; 
+  margin-bottom: -35px;
+}
