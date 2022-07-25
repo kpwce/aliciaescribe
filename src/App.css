@@ -11,19 +11,21 @@ body {
 
 a {
   color: rgb(156, 156, 156);
+  padding: 10px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 20px;
+  font-weight: bold;
 }
 
 .intro {
   display: flex;
   align-items: center;
-  justify-content: center;
+  justify-content: space-evenly;
   margin-top: 20px;
-  padding: 50px;
+  padding-top: 50px;
+  padding-bottom: 50px;
   background-color: rgb(86, 107, 141);
-}
-
-.text-area {
-  padding: 100px;
 }
 
 .header {
@@ -49,20 +51,18 @@ img {
 footer {
   background-color: rgb(68, 85, 112);
   color:rgb(156, 156, 156);
+  width: 100%;
 }
 
 button {
   font-family: “Playfair Display”, “Didot”, "Times New Roman", Times, serif;
   padding: 10px;
+  font-size: 20px;
   cursor: pointer;
   background-color: transparent;
   border-color: transparent;
   font-weight: bold;
   color: rgb(156, 156, 156);
-}
-
-a {
-  padding: 10px;
 }
 
 h2 {
@@ -72,4 +72,12 @@ h2 {
 hr { 
   margin-top:-35px; 
   margin-bottom: -35px;
+}
+
+#mystery-button {
+  background-color: rgb(68, 68, 68);
+}
+
+#vid, #pic {
+  display: none;
 }
