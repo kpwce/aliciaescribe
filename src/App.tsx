@@ -115,13 +115,13 @@ export class App extends Component<{}, AppState> {
       <div className="work">
           <h4>Lingüística computacional con los textos góticos - Java</h4>
           <p>{texts[(this.state.lang ? 0 : 1) + 12]}</p>
-        <a className="button" href="https://aliciaescribe.com"><FaGithub/></a>
+        {/*<a className="button" href="https://aliciaescribe.com"><FaGithub/></a>*/}
         </div>
 
         <div className="work">
           <h4>Clasificación de dialectos - Java</h4>
           <p>{texts[(this.state.lang ? 0 : 1) + 14]}</p>
-          <a className="button" href="https://aliciaescribe.com"><FaGithub/></a>
+          <a className="button" href="https://github.com/kpwce/dialect-classifier"><FaGithub/></a>
         </div>
 
         <div className="work">
@@ -145,9 +145,9 @@ export class App extends Component<{}, AppState> {
         {TextArea("¿Qué hace este botón?", "What does this button do?", this.state.lang)}
         <button id="mystery-button" onClick={() => this.mystery()}><FaCoffee/></button><br/><br/>
           <iframe id="vid" width="320" height="240" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&amp"
-                  title="YouTube video player" frameBorder="0"
-                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                  allowFullScreen></iframe>
+    title="YouTube video player" frameBorder="0"
+    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowFullScreen/>
           <img id="pic" src={bird} alt="Chill pigeon"/>
         </div>
     );
@@ -157,24 +157,30 @@ export class App extends Component<{}, AppState> {
   mystery() {
     let mobile = window.matchMedia("only screen and (max-width: 760px)").matches;
 
+    let video = document.getElementById("vid");
+    let pic = document.getElementById("pic");
     if (!mobile) {
-      let elem = document.getElementById("vid");
-      if (elem) {
-        if (elem.style.display === "inline-block") {
-          elem.style.display = "none";
-          elem.setAttribute("src", "https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&amp");
+      if (pic) {
+        pic.style.display = "none";
+      }
+      if (video) {
+        if (video.style.display === "inline-block") {
+          video.style.display = "none";
+          video.setAttribute("src", "https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&amp");
         } else {
-          elem.setAttribute("src", "https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&amp;autoplay=1");
-          setTimeout(function(){if (elem) elem.style.display = "inline-block";},1000);
+          video.setAttribute("src", "https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&amp;autoplay=1");
+          setTimeout(function(){if (video) video.style.display = "inline-block";},1000);
         }
       }
     } else {
-      let elem = document.getElementById("pic");
-      if (elem) {
-        if (elem.style.display === "inline-block") {
-          elem.style.display = "none";
+      if (video) {
+        video.style.display = "none";
+      }
+      if (pic) {
+        if (pic.style.display === "inline-block") {
+          pic.style.display = "none";
         } else {
-          elem.style.display = "inline-block";
+          pic.style.display = "inline-block";
         }
       }
 
