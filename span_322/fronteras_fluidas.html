@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body {
+  font-family: 'Trebuchet MS', sans-serif;
+  background-color: black;
+  color: white;
+  left: 50px;
+}
+
+.flip-card {
+  background-color: transparent;
+  width: 400px;
+  height: 400px;
+  perspective: 1000px;
+  float: left;
+  margin: 25px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+  box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front, .flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  -webkit-backface-visibility: hidden;
+  backface-visibility: hidden;
+}
+
+.flip-card-front {
+  background-color: #bbb;
+  color: black;
+}
+
+.flip-card-back {
+  background-color: #004e83;
+  color: white;
+  transform: rotateY(180deg);
+}
+
+.row::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+p:hover {
+        color: white;
+        background-color: rgb(17, 0, 125);
+    }
+
+h1:hover {
+  box-shadow: 0 10px 20px 0 rgba(0, 0, 0, 0.5), 0 5px 50px 0 rgba(0, 0, 0, 0.5);
+  background-color: rgb(255, 255, 255);
+  color: black;
+}
+</style>
+</head>
+<body>
+
+
+<h1>Fronteras fluidas: un ensayo visual</h1>
+
+<p>Tema: Teniendo en cuenta el tema del capítulo VI, Fronteras fluidas, ¿qué piensas tú sobre un mundo sin fronteras? Crea un mural o un texto cultural creativo que refleje tu perspectiva a esta pregunta.</p>
+
+<p>Artista: Alysa Meng</p>
+
+<p style="background-color:rgb(80, 80, 80);">"¿Qué semejanzas hay entre estos emojis y otros códigos como HTML, Python u otras lenguas?"<br/><br/>
+   
+  Para responder a esta pregunta planteada el primer día de clase (con un toque de humor): Los demás utilizan los emojis para transmitir emociones. Alysa utiliza HTML (esta página se compone de 300 líneas de HTML, CSS y unas fotos de Wikipedia CC).<br/><br/> 
+  
+  En el siglo XXI, vivimos en un mundo cada vez más digital. Este mundo digital no tiene fronteras para mí, una programadora con acceso y competencia tecnológica, y por lo tanto es tan relevante este medio en el que hago esta tarea. Todo esto es bastante poético y autoreferencial.
+
+</p>
+
+<h2>Un mundo con fronteras...</h2>
+
+<div class="row">
+  <div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="assets/swiss_italian.jpeg" alt="SwissItalianBorder" style="width:400px;height:400px;">
+      </div>
+      <div class="flip-card-back">
+        <a href="https://en.wikipedia.org/wiki/Border#/media/File:Valico_Ponte_Tresa.JPG">&#128247;</a>
+        <h3>... organiza a la gente.</h3>
+        <p>Las fronteras son una estructura de organización que intentan definir con claridad las líneas entre dos comunidades. Son esenciales desde una perspectiva política para establecer el alcance de la ley y mantener la paz internacional.</p> 
+      </div>
+    </div>
+  </div>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="assets/great_wall.jpg" alt=GreatWall" style="width:400px;height:400px;">
+    </div>
+    <div class="flip-card-back">
+      <a href="https://en.wikipedia.org/wiki/Border#/media/File:Greatwall-SA3.jpg">&#128247;</a>
+      <h3>... protege a la gente.</h3>
+      <p>A veces las fronteras, no solo los límites físicos sino también las normas culturales, se crean para proteger ciertas comunidades. Definen la identidad de una región o grupo cultural dentro de una región.</p> 
+    </div>
+  </div>
+</div>
+<div class="flip-card">
+  <div class="flip-card-inner">
+    <div class="flip-card-front">
+      <img src="assets/berlin_wall.jpg" alt="BerlinWall" style="width:400px;height:400px;">
+    </div>
+    <div class="flip-card-back">
+      <a href="https://en.wikipedia.org/wiki/Berlin_Wall#/media/File:Berlinermauer.jpg">&#128247;</a>
+      <h3>... divide a la gente.</h3> 
+      <p>Crear una barrera puede causar problemas graves para los que viven cerca de ella. Hay conflictos de identidad cultural, una zona gris en la política, y una noción de la otredad.</p>
+    </div>
+  </div>
+</div>
+</div>
+
+<br/>
+
+  <h2>Un mundo con fronteras fluidas...</h2>
+
+<div class="row">
+  <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="assets/anzaldua.jpg" alt="Anzaldua" style="width:400px;height:400px;">
+        </div>
+        <div class="flip-card-back">
+          <a href="https://en.wikipedia.org/wiki/Gloria_E._Anzald%C3%BAa#/media/File:Gloria_Anzaldua.jpg">&#128247;</a>
+          <h3>... reconoce una identidad entre dos culturas.</h3> 
+          <p>"I will no longer be made to feel ashamed of existing. I will have my voice. Indian, Spanish, white. I will have my serpent's tongue--my woman's voice, my sexual voice, my poet's voice."</p>
+          <p>- Gloria Anzaldúa</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="assets/man_horse.jpg" alt="HalfManHalfHorse" style="width:400px;height:400px;">
+        </div>
+        <div class="flip-card-back">
+          <a href="https://en.wikipedia.org/wiki/Liminal_being#/media/File:Palais_Bourbon,_Malerei_in_der_Kuppel_der_Poesie,_Szene-_Erziehung_des_Achill_(Eug%C3%A8ne_Delacroix).jpg">&#128247;</a>
+          <h3>... establece un espacio de transición.</h3> 
+          <p>Las fronteras lingüísticas son un desafío, y el idioma cambia debido a las necesidades dinámicas de la gente. Las lenguas mezcladas, como el español chicano, ejemplifican la adaptación de la cultura fuera de la patria.</p>
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+        <div class="flip-card-inner">
+          <div class="flip-card-front">
+            <img src="assets/diaspora.jpg" alt="MexicanDiaspora" style="width:400px;height:400px;">
+          </div>
+          <div class="flip-card-back">
+            <a href="https://en.wikipedia.org/wiki/Diaspora#/media/File:Pi%C3%B1ata.jpg">&#128247;</a>
+            <h3>... puede ser complicado.</h3> 
+            <p>La existencia de fronteras se base en la estructura sociopolítica y los valores culturales. La diversidad cultural dentro de una comunidad internacional es increíble y gracias a esta diáspora, puede ser difícil crear un puente cuando esos valores contradicen. Lo que se puede hacer es reconocer la causa de esas diferencias.</p> 
+          </div>
+        </div>
+      </div>
+    </div>
+
+<h2>Un mundo sin fronteras...</h2>
+<div class="row">
+<div class="flip-card">
+    <div class="flip-card-inner">
+      <div class="flip-card-front">
+        <img src="assets/harmony_day.jpg" alt="HarmonyDay" style="width:400px;height:400px;">
+      </div>
+      <div class="flip-card-back">
+        <a href="https://en.wikipedia.org/wiki/Inclusion_(education)#/media/File:Harmony_Day_(5475651018).jpg">&#128247;</a>
+        <h3>... es una sociedad inclusiva.</h3> 
+        <p>La ausencia de fronteras se relaciona con la habilidad de cada persona de definir quién es sí mismo para la comunidad que lo rodea.</p> 
+      </div>
+    </div>
+  </div>
+
+  <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="assets/peace_celebration.jpg" alt="PeaceCelebrationUganda" style="width:400px;height:400px;">
+        </div>
+        <div class="flip-card-back">
+          <a href="https://en.wikipedia.org/wiki/Dance#/media/File:Cultural_celebrations_resumed_with_the_end_of_the_LRA_conflict_in_Northern_Uganda_(7269658432).jpg">&#128247;</a>
+          <h3>... tiene movimiento para todos.</h3> 
+          <p>La falta de fronteras facilita la libertad social de las personas. Extiende la capacidad de intercambios culturas que promova conocimiento global.</p> 
+        </div>
+      </div>
+    </div>
+
+    <div class="flip-card">
+      <div class="flip-card-inner">
+        <div class="flip-card-front">
+          <img src="assets/babel.jpg" alt="TowerOfBabel" style="width:400px;height:400px;">
+        </div>
+        <div class="flip-card-back">
+          <a href="https://en.wikipedia.org/wiki/Language#/media/File:Pieter_Bruegel_the_Elder_-_The_Tower_of_Babel_(Vienna)_-_Google_Art_Project_-_edited.jpg">&#128247;</a>
+          <h3>... no es posible.</h3> 
+          <p>Debido a la naturaleza humana, es difícil sostener una sociedad sin fronteras. Galeano discute la historia de perder y ganar entre Latinoamérica en el contexto del postcolonialismo. Las fronteras, por razones semejantes, surgen como parte de la evolución del mundo físico y humano.</p> 
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <p style="background-color:rgb(80, 80, 80);">Recorriendo las diferentes circunstancias, lo mejor sería luchar por un mundo lleno de los tres escenarios donde las fronteras existen para establecer la orden necesaria para que crezca una sociedad inteligente y no hay fronteras en la discusión de los derechos humanos. Considero igualmente importante tener fronteras fluidas para fomentar la comunicación entre dos partes. Se realizan esas fronteras de varias maneras, como ejemplos, los avances tecnológicos que conecta a la gente y el reconocimiento de los individuos que tienen una identidad compuesta de dos o más comunidades.</p>
+
+</body>
+</html>
