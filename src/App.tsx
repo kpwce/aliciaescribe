@@ -1,11 +1,8 @@
 import React, {Component} from 'react';
 import './TextArea'
 import texts from './description';
-import pms from "./haikus";
 import './App.css';
-import {FaLinkedin, FaGithub, FaInstagram, FaExternalLinkAlt, FaLightbulb, FaCoffee} from 'react-icons/fa';
-import profile from './profile_pic.jpg';
-import bird from './bird.jpeg';
+import {FaLinkedin, FaGithub, FaInstagram, FaExternalLinkAlt} from 'react-icons/fa';
 import TextArea from './TextArea';
 
 interface AppState {
@@ -33,10 +30,7 @@ export class App extends Component<{}, AppState> {
         </div>
 
         {this.getIntro()}
-        {this.getAbout()}
         {this.getWriting()}
-        {this.getProjects()}
-        {this.getButton()}
         {this.getFooter()}
       </div>
     );
@@ -51,151 +45,63 @@ export class App extends Component<{}, AppState> {
   getIntro() {
     return (
       <div className="intro">
-        {TextArea("Alicia", "Alysa", this.state.lang)}
-        <img src={profile} alt="Profile"/>
+        <div>
+            <h1>Alysa Meng</h1>
+            <p>{texts[this.state.lang ? 0 : 1]}</p>
+          </div>
       </div>
     );
 
-  }
-
-  // quick self description
-  getAbout() {
-    return (
-      <div className="about">
-        {TextArea("Sobre mí", "About me", this.state.lang)}
-        <p>{texts[this.state.lang ? 0 : 1]}</p>
-      </div>
-    );
   }
 
   // some selected works
   getWriting() {
     return (
       <div className="writing">
-        {TextArea("Literatura", "Writing", this.state.lang)}
+        {TextArea("Sobre literatura", "On Literature", this.state.lang)}
 
         <div className="work">
-          <h4>"Los perros alegóricos en la Revolución mexicana"</h4>
+            <h4>Los perros alegóricos en la Revolución mexicana</h4>
           <p>{texts[(this.state.lang ? 0 : 1) + 2]}</p>
           <a className="button" href={process.env.PUBLIC_URL + '/work_files/Perros_alegoricos.pdf'} target='_blank' rel="noreferrer"><FaExternalLinkAlt/></a>
         </div>
 
         <div className="work">
-          <h4>"Dibujos de tiza"</h4>
+            <h4>Los corridos en Los de abajo, de Mariano Azuela</h4>
+          <p>{texts[(this.state.lang ? 0 : 1) + 12]}</p>
+          <a className="button" href={process.env.PUBLIC_URL + '/work_files/El_corrido_de_Camila.pdf'} target='_blank' rel="noreferrer"><FaExternalLinkAlt/></a>
+        </div>
+
+        <div className="work">
+          <h4>Carta de presentación escrita por un pícaro</h4>
+          <p>{texts[(this.state.lang ? 0 : 1) + 6]}</p>
+          <a className="button" href={process.env.PUBLIC_URL + '/work_files/Carta_de_presentacion.pdf'} target='_blank' rel="noreferrer"><FaExternalLinkAlt/></a>
+        </div>
+
+        {TextArea("Sobre matemáticas", "On mathematics", this.state.lang)}
+        <div className="work">
+          <h4>Dibujos de tiza</h4>
           <p>{texts[(this.state.lang ? 0 : 1) + 4]}</p>
           <a className="button" href={process.env.PUBLIC_URL + '/work_files/Dibujos_de_tiza.pdf'} target='_blank' rel="noreferrer"><FaExternalLinkAlt/></a>
         </div>
 
         <div className="work">
-          <h4>"Carta de presentación escrita por un pícaro"</h4>
-          <p>{texts[(this.state.lang ? 0 : 1) + 6]}</p>
-          <a className="button" href={process.env.PUBLIC_URL + '/work_files/Carta_de_presentacion.pdf'} target='_blank' rel="noreferrer"><FaExternalLinkAlt/></a>
-        </div>
-
-        <div className="work">
-          <h4>"Un día en el andén"</h4>
+          <h4>An intuitive explanation of the Euclidean Algorithm</h4>
           <p>{texts[(this.state.lang ? 0 : 1) + 8]}</p>
-          <a className="button" href="https://revistaliteral.com/2020/04/13/un-dia-en-el-anden/" target='_blank' rel="noreferrer"><FaExternalLinkAlt/></a>
+          <a className="button" href={process.env.PUBLIC_URL + '/work_files/Euclidean_Algorithm_Intuition.pdf'} target='_blank' rel="noreferrer"><FaExternalLinkAlt/></a>
         </div>
 
         <div className="work">
-          <h4>"Entre las naranjas sanguinas"</h4>
+          <h4>Supplemental Guide on Formal Languages for CSE 311</h4>
           <p>{texts[(this.state.lang ? 0 : 1) + 10]}</p>
-          <a className="button" href={process.env.PUBLIC_URL + '/work_files/Naranjas_sanguinas.pdf'} target='_blank' rel="noreferrer"><FaExternalLinkAlt/></a>
+          <a className="button" href={process.env.PUBLIC_URL + '/work_files/CSE_311_Section_8.pdf'} target='_blank' rel="noreferrer"><FaExternalLinkAlt/></a>
         </div>
       </div>
     );
   }
-
-  // some selected projects
-  getProjects() {
-    return (
-      <div className="projects">
-      {TextArea("Proyectos", "Projects", this.state.lang)}
-      <div className="work">
-          <h4>Lingüística computacional con los textos góticos - Java</h4>
-          <p>{texts[(this.state.lang ? 0 : 1) + 12]}</p>
-        {/*<a className="button" href="https://aliciaescribe.com"><FaGithub/></a>*/}
-        </div>
-
-        <div className="work">
-          <h4>Clasificación de dialectos - Java</h4>
-          <p>{texts[(this.state.lang ? 0 : 1) + 14]}</p>
-          <a className="button" href="https://github.com/kpwce/dialect-classifier"><FaGithub/></a>
-        </div>
-
-        <div className="work">
-          <h4>Sitio personal - JavaScript</h4>
-          <p>{texts[(this.state.lang ? 0 : 1) + 16]}</p>
-          <a className="button" href="https://github.com/kpwce/site" target='_blank' rel="noreferrer"><FaGithub/></a>
-        </div>
-
-        <div className="work">
-          <h4>Haikus aleatorios - JavaScript</h4>
-          <p>{texts[(this.state.lang ? 0 : 1) + 18]}</p>
-          <button onClick={() => alert(pms[Math.floor(Math.random() * pms.length)])}><FaLightbulb/></button>
-        </div>
-    </div>
-    );
-  }
-
-  getButton() {
-    return(
-        <div className="mystery">
-        {TextArea("¿Qué hace este botón?", "What does this button do?", this.state.lang)}
-        <button id="mystery-button" onClick={() => this.mystery()}><FaCoffee/></button><br/><br/>
-          <iframe id="vid" width="320" height="240" src="https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&amp"
-    title="YouTube video player" frameBorder="0"
-    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-    allowFullScreen/>
-          <img id="pic" src={bird} alt="Chill pigeon"/>
-        </div>
-    );
-  }
-
-  // determines function of mystery button
-  mystery() {
-    let mobile = window.matchMedia("only screen and (max-width: 760px)").matches;
-
-    let video = document.getElementById("vid");
-    let pic = document.getElementById("pic");
-    if (!mobile) {
-      if (pic) {
-        pic.style.display = "none";
-      }
-      if (video) {
-        if (video.style.display === "inline-block") {
-          video.style.display = "none";
-          video.setAttribute("src", "https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&amp");
-        } else {
-          video.setAttribute("src", "https://www.youtube.com/embed/dQw4w9WgXcQ?controls=0&amp;autoplay=1");
-          setTimeout(function(){if (video) video.style.display = "inline-block";},1000);
-        }
-      }
-    } else {
-      if (video) {
-        video.style.display = "none";
-      }
-      if (pic) {
-        if (pic.style.display === "inline-block") {
-          pic.style.display = "none";
-        } else {
-          pic.style.display = "inline-block";
-        }
-      }
-
-    }
-
-  }
-
-  // the awesome footer
   getFooter() {
     return (
     <footer>
-      {TextArea("Información de contacto", "Contact information", this.state.lang)}
-      <a href="https://www.instagram.com/kpwce/"><FaInstagram/></a>
-      <a href="https://www.linkedin.com/in/alysam"><FaLinkedin/></a>
-      <a href="https://github.com/kpwce"><FaGithub/></a>
       <div className="Copyright">
         <p>© {new Date().getFullYear()} aliciaescribe </p>
       </div>
